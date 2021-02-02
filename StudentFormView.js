@@ -6,17 +6,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 export default function StudentFormView() {
   return (
-    <View>
-      <Text>Heyo! I'm a student view!</Text>
+    <View style={styles.viewContainer}>
+      <Text style={styles.text}>Heyo! I'm a student view!</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  viewContainer: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

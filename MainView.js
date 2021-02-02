@@ -11,7 +11,7 @@ const Separator = () => (
 
 export default function MainView({ navigation }) {
   return (
-    <View>
+    <View style={styles.viewContainer}>
         <Button
             title="Student"
             onPress={() => navigation.navigate('StudentFormView')}
@@ -37,9 +37,8 @@ export default function MainView({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
+  viewContainer: {
+    marginTop: 40,
     justifyContent: 'center',
   },
   separator: {

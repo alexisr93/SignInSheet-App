@@ -6,17 +6,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 export default function ParentFormView() {
   return (
-    <View>
+    <View style={styles.viewContainer}>
       <Text>Heyo! I'm a Parent view!</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  viewContainer: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
