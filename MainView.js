@@ -39,11 +39,10 @@ export default function MainView({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
   },
   separator: {
     marginVertical: 8,
-    borderBottomColor: '#737373',
   },
 });
