@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DefaultForm from './DefaultForm';
 
-export default function StudentFormView() {
+export default function StudentFormView({navigation}) {
   return (
     <View style={styles.viewContainer}>
-      <Text style={styles.text}>Heyo! I'm a student view!</Text>
+      <DefaultForm navigation={navigation} disableEmail={true} disablePhone={true}/>
     </View>
   );
 }

@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import StudentFormView from './StudentFormView.js'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -32,6 +31,7 @@ export default function MainView({ navigation }) {
             color="#841584"
             accessibilityLabel="Visitor button"
         />
+        <Separator />
     </View>
   );
 }

@@ -3,11 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DefaultForm from './DefaultForm';
 
-export default function VisitorFormView() {
+export default function VisitorFormView({ navigation }) {
   return (
     <View style={styles.viewContainer}>
-      <Text>Heyo! I'm a Visitor view!</Text>
+      <DefaultForm navigation={navigation} disableEmail={false} disablePhone={false}v/>
     </View>
   );
 }

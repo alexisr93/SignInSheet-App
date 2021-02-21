@@ -7,6 +7,8 @@ import MainView from './MainView.js';
 import StudentFormView from './StudentFormView.js';
 import ParentFormView from './ParentFormView.js';
 import VisitorFormView from './VisitorFormView.js';
+import Submitted from './Submitted.js';
+
 
 function HomeScreen({navigation}) {
   return (
@@ -25,6 +27,7 @@ function MyStack(){
       <Stack.Screen name="StudentFormView" component={StudentFormView} options={{ title: 'Student' }}/>
       <Stack.Screen name="ParentFormView" component={ParentFormView} options={{ title: 'Parent/Guardian' }}/>
       <Stack.Screen name="VisitorFormView" component={VisitorFormView} options={{ title: 'Visitor' }}/>
+      <Stack.Screen name="Submitted" component={Submitted} options={{ title: 'Submitted' }}/>
     </Stack.Navigator>
   )
 }
