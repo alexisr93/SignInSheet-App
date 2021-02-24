@@ -13,8 +13,8 @@ export default function DefaultForm({ navigation, disableEmail, disablePhone }) 
 
   const emailInput = disableEmail ? null : (
     <TextInput
+      style={styles.input}
       placeholder="Email"
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
       onChangeText={input => setEmail(input)}
       value={email}
     />
@@ -22,8 +22,8 @@ export default function DefaultForm({ navigation, disableEmail, disablePhone }) 
 
   const phoneInput = disablePhone ? null : (
     <TextInput
+      style={styles.input}
       placeholder="Phone"
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
       onChangeText={input => setPhone(input)}
       value={phone}
     />
@@ -56,33 +56,34 @@ export default function DefaultForm({ navigation, disableEmail, disablePhone }) 
     navigation.navigate('Submitted')
   }
 
-    return (
-      <View>
-        {/* This will be text */}
-        <TextInput
-          placeholder="First Name"
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+  return (
+    <View style={styles.viewContainer}>
+      {/* This will be text */}
+      <TextInput
+        style={styles.input}
+        placeholder="First Name"
         onChangeText={input => setFirstName(input)}
         value={firstName}
       />
       <TextInput
+        style={styles.input}
         placeholder="Last Name"
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         onChangeText={input => setLastName(input)}
         value={lastName}
       />
       {emailInput}
       {phoneInput}
       <TextInput
+        style={styles.input}
         placeholder="Reason"
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         onChangeText={input => setReason(input)}
         value={reason}
       />
+      <View style={styles.separator} />
       <Button
+        style={styles.button}
         title="Submit"
         onPress={submitData}
-        color="#841584"
         accessibilityLabel="Submit Button"
       />
     </View>
@@ -92,6 +93,21 @@ export default function DefaultForm({ navigation, disableEmail, disablePhone }) 
 const styles = StyleSheet.create({
   viewContainer: {
     flex: 1,
+    flexDirection: 'column',
+    alignSelf: 'center',
+    alignItems: 'stretch',
+    width: '80%',
     backgroundColor: '#FFFFFF',
   },
+  input: {
+    height: 40,
+    marginTop: 20,
+    padding: 10,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 3,
+  },
+  separator: {
+    marginVertical: 12,
+  }
 });
