@@ -8,7 +8,11 @@ import DefaultForm from './DefaultForm';
 export default function StudentFormView({navigation}) {
   return (
     <View style={styles.viewContainer}>
-      <DefaultForm navigation={navigation} disableEmail={true} disablePhone={true}/>
+      <DefaultForm
+        navigation={navigation}
+        disableEmail={true}
+        disablePhone={true}
+      />
     </View>
   );
 }
