@@ -5,11 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 export default function DefaultForm({ navigation, disableEmail, disablePhone }) {
-  const [firstName, setFirstName] = React.useState();
-  const [lastName, setLastName] = React.useState();
-  const [email, setEmail] = React.useState();
-  const [phone, setPhone] = React.useState();
-  const [reason, setReason] = React.useState();
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [reason, setReason] = React.useState("");
 
   const emailInput = disableEmail ? null : (
     <TextInput
@@ -30,14 +30,37 @@ export default function DefaultForm({ navigation, disableEmail, disablePhone }) 
   );
 
   const submitData = () => {
+    const customerData = { firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      reason: reason
+    }
+
+    fetch('http://localhost:3000/data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+      },
+      body: JSON.stringify(customerData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
     navigation.navigate('Submitted')
   }
 
-  return (
-    <View>
-      {/* This will be text */}
-      <TextInput
-        placeholder="First Name"
+    return (
+      <View>
+        {/* This will be text */}
+        <TextInput
+          placeholder="First Name"
         style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         onChangeText={input => setFirstName(input)}
         value={firstName}
