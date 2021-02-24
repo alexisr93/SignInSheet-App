@@ -14,11 +14,31 @@ const Stack = createStackNavigator();
 function MyStack(){
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={{ title: 'Welcome' }}/>
-      <Stack.Screen name="StudentFormView" component={StudentFormView} options={{ title: 'Student' }}/>
-      <Stack.Screen name="ParentFormView" component={ParentFormView} options={{ title: 'Parent/Guardian' }}/>
-      <Stack.Screen name="VisitorFormView" component={VisitorFormView} options={{ title: 'Visitor' }}/>
-      <Stack.Screen name="Submitted" component={Submitted} options={{ title: 'Submitted' }}/>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{ title: 'Welcome' }}
+      />
+      <Stack.Screen
+        name="StudentFormView"
+        component={StudentFormView}
+        options={{ title: 'Student' }}
+      />
+      <Stack.Screen
+        name="ParentFormView"
+        component={ParentFormView}
+        options={{ title: 'Parent/Guardian' }}
+      />
+      <Stack.Screen
+        name="VisitorFormView"
+        component={VisitorFormView}
+        options={{ title: 'Visitor' }}
+        />
+      <Stack.Screen
+        name="Submitted"
+        component={Submitted}
+        options={{ title: 'Submitted' }}
+      />
     </Stack.Navigator>
   )
 }
